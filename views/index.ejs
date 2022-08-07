@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        
+        <title>NB</title>
+
+    </head>
+    <body>
+        <link rel="stylesheet" href="css/main.css">
+
+        <style media="screen">
+
+
+             table {
+            border-collapse: collapse;
+            width: 100%;
+    
+            }
+            td, th {
+            border: 1px solid #cccccc;
+            padding: 10px;
+            text-align: center;
+            }
+            #dform {
+                margin-top: 50px;
+                margin-left: 50px;
+                width: 100%;
+            }
+            #search {
+                width: 50%;
+            }
+            </style>
+           
+            <div id="dform">
+                <!-- <form action='<?php echo $_SERVER["PHP_SELF"]?>' method='get'>
+                    <input id='search' type="number" name="number" placeholder="Number">
+                    <button type="submit">Search</button>
+                </form> -->
+                <input id='search' type="number" name="number" placeholder="Number">
+                <button type="submit">Search</button>
+            </div>
+
+            <table>
+                <thead>
+                <th>Name</th>
+                </thead>
+                <tbody id="tableData">
+                
+                </tbody>
+            </table>
+        <script type="text/javascript">
+
+            const	tableBody = document.getElementById("tableData");
+            // let di = document.createElement('div');
+            // di.setAttribute('id', 'kdiv');
+            // document.body.appendChild(di);
+
+            // console.log(t);
+        </script>
+
+    </body>
+</html>
