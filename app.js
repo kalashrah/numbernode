@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const app = express();
 
 const path = require('path');
@@ -6,7 +7,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 
-const port = 8080;
+const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
@@ -32,10 +33,16 @@ app.use('/', index);
 //     // next();
 // });
 
-app.listen(port, function(){
+app.set('port', process.env.PORT || 8080);
 
-    console.log(`app listen${port} ...`);
+app.get('/', function(req, res){
+    res.send('hello world');
 });
+
+// Only works on 3000 regardless of what I set environment port to or how I set
+// [value] in app.set('port', [value]).
+// app.listen(3000);
+app.listen(app.get('port'));
 // let http = require('http');
 
 // http.get('http://nbrpro.me/nbrpro_handler/search/s_n_1?devuid=D1BF72E3-AE3A-4777-8464-A6AB695C1310&fcntry=+966&nid=550880999',(res) => {
